@@ -1,6 +1,6 @@
 #!/bin/bash
 
 
-Todays_date=$(date +%F)
+TODAYS_DATE=$(date +%F)
 
-echo "this to show todays date is $(Todays_date)"
+echo "this to show todays date is $(TODAYS_DATE)"
