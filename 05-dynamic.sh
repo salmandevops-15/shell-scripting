@@ -3,4 +3,4 @@
 
 Todays_date=$(d +%F)
 
-echo "${Todays_date}"
+echo "$(Todays_date)"
