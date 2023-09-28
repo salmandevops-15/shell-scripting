@@ -5,7 +5,7 @@ a=10
 b=20
 c=30
 
-echo "the value of variable a is $a"
-echo "the value of variable b is ${b}"
-echo "the value of variable c is ${c}"
-echo "the value of variable d is ${d}"
+echo -e "the value of variable a is \e[33m $a \e[0m"
+echo -e "the value of variable b is \e[34 ${b} \e[0m"
+echo -e "the value of variable c is \e[35m ${c} \e[0m"
+echo -e "the value of variable d is \e[33m ${d} \e[0m"
