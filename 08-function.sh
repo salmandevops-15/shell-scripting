@@ -6,3 +6,4 @@ sample(){
     echo "sample function is compeleted"
 }
 
+sample
