@@ -1,6 +1,6 @@
 #!/bin/bash
 
 
-Todays_date="03-sep-23"
+Todays_date="(d +%F)"
 
 echo "${Todays_date}"
