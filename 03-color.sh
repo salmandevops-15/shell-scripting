@@ -1,5 +1,5 @@
 #!/bin/bash
 
 
-echo -e "line 1 \n line 2"
-echo -e "line3\n\tline4"
+echo -e "\e [32m this is to show green color \e[0m"
+echo "\e [33m this to show yellow color \e[0m"
