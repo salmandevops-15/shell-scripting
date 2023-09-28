@@ -3,4 +3,4 @@
 
 TODAYS_DATE=$(date +%F)
 
-echo "this to show todays date is $(TODAYS_DATE)"
+echo "this to show todays date is $TODAYS_DATE"
