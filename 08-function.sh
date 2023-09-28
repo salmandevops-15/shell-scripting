@@ -4,6 +4,7 @@ sample(){
     echo "this to show sample function"
     echo "iam executing sample function"
     echo "sample function is compeleted"
+    status
 }
 
 sample
@@ -13,4 +14,3 @@ status (){
     echo -e "no of opened sessions is \e[32m $(who | wc -l) \e[0m"
 }
 
-status
