@@ -35,6 +35,8 @@ echo the value of d is $d
 
 Todays_date="$(date)"
 
+echo todays date is $Todays_date
+
 echo -e "\e[32m good morning and todays date is $Todays_date \e[0m"
 
 
