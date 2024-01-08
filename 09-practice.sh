@@ -1,6 +1,7 @@
 #!/bin/bash
 
-echo welcome to devops learinig
-echo we can bag high sal job 
+##to print anything
+
+echo -e "line1\nline2"
 
 
