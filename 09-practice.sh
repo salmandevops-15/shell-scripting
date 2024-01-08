@@ -76,6 +76,7 @@ sample1 (){
     echo  this is end of sample function
 
     sample2
+    
 }
 
 #calling function
