@@ -2,6 +2,6 @@
 
 ##to print anything
 
-echo -e"line1\n\tline2"
+echo -e "line1\n\tline2"
 
 
