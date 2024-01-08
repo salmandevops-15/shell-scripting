@@ -81,8 +81,6 @@ sample1 (){
 
 #calling function
 
-sample2
-
 sample1
 
 #function #2
@@ -91,6 +89,8 @@ sample2(){
 
     echo -e "\e[36m this is sample2 \e[0m"
 }
+
+sample2
 
 
 
