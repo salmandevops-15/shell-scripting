@@ -45,3 +45,23 @@ echo no of sessions is $no_of_sessions
 echo -e "\e[32m good morning and todays date is $Todays_date \e[0m"
 
 echo -e "\e[34m no of sessions is $no_of_sessions \e [0m"
+
+
+#special variables
+
+# $0: this will display script name
+# $1-$9: we can give input for variable while we execute the script
+# $* : this will display variables in the script
+# $@ : this will display variables in the script
+# $$ : this will give Pid of current process
+# $# : this will give number of variables used in the script
+# $? : this will give exit code of last command
+
+echo script name is $0
+echo trainer name is $1
+echo batch number is $2
+echo current topic is $3
+
+
+
+
