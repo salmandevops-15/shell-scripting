@@ -33,7 +33,7 @@ echo the value of d is $d
 
 #dynamic variables
 
-Todays_date= $date
+Todays_date= "$date"
 
 echo todays date is $Todays_date
 
