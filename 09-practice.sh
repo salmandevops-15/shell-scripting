@@ -75,7 +75,7 @@ sample1 (){
     echo this is batch num 54
     echo  this is end of sample function
     echo calling function2
-    sample2
+    echo sample2
 }
 
 #calling function
