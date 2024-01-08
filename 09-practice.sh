@@ -31,6 +31,10 @@ echo the value of a is $a
 echo the value of b is $b
 echo the value of d is $d
 
+#dynamic variables
 
+Todays_date=date
+
+echo todays date is $Todays_date
 
 
