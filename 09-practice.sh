@@ -61,6 +61,10 @@ echo script name is $0
 echo trainer name is $1
 echo batch number is $2
 echo current topic is $3
+echo variables used is $*
+echo variables used is $@
+echo pid of current process is $$
+echo no of variables used is $#
 
 
 
