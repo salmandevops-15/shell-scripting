@@ -66,6 +66,20 @@ echo variables used is $@
 echo pid of current process is $$
 echo no of variables used is $#
 
+#functions 
+
+#decleration of function
+
+sample (){
+    echo welcome to devops learning
+    echo this is batch num 54
+    echo  this is end of sample function
+}
+
+#calling function
+
+sample
+
 
 
 
