@@ -22,7 +22,7 @@ echo -e "\e[43;32m print green color font with yellow background \e[0m"
 
 a=10
 b=11
-d=
+d=75
 
 
 #to print variables
