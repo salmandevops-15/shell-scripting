@@ -35,8 +35,13 @@ echo the value of d is $d
 
 Todays_date="$(date)"
 
+no_of_sessions="$(who|wc -l)"
+
 echo todays date is $Todays_date
 
+echo no of sessions is $no_of_sessions
+
+#to print in color font
 echo -e "\e[32m good morning and todays date is $Todays_date \e[0m"
 
-
+echo -e "\e[34m no of sessions is $no_of_sessions \e [0m"
