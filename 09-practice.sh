@@ -74,8 +74,8 @@ sample1 (){
     echo welcome to devops learning
     echo this is batch num 54
     echo  this is end of sample function
-
     sample2
+
 
 }
 
