@@ -80,6 +80,12 @@ sample1 (){
 
 sample1
 
+sample2(){
+    echo -e "\e[36m this is sample2 \e[0m"
+}
+
+sample2
+
 
 
 
