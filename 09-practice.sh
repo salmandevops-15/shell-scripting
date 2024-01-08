@@ -91,6 +91,8 @@ status(){
 
 #calling function 2
 
+status
+
 
 
 
