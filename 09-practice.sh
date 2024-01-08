@@ -74,6 +74,8 @@ sample1 (){
     echo welcome to devops learning
     echo this is batch num 54
     echo  this is end of sample function
+    echo calling function2
+    sample2
 }
 
 #calling function
@@ -83,11 +85,10 @@ sample1
 #function #2
 
 sample2(){
-    echo -e "\e[36m this is sample2 \e[0m"
+    echo -e "\e[36m this is function2 \e[0m"
 }
 
 #calling function 2
-sample2
 
 
 
