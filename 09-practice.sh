@@ -76,14 +76,17 @@ sample1 (){
     echo  this is end of sample function
 
     sample2
-    
+
 }
 
 #calling function
 
 sample1
 
+#function #2
+
 sample2(){
+
     echo -e "\e[36m this is sample2 \e[0m"
 }
 
