@@ -1,5 +1,59 @@
 #!/bin/bash
 
+<<COMMENT
+### Conditions 
+
+    1. Simple If
+    2. If Else 
+    3. Else If
+
+* Simple If 
+
+    if [ expression ]; then
+        command1
+        command2
+        command3
+    fi 
+    
+If expression is true then it executes the commands
+NOTE: If the expression is false, then it will not perform any thing
+ 
+
+ * If Else   
+
+
+    if [ expression ]; then
+        command1
+        command2
+        command3
+    else 
+        commandx
+        commandy
+    fi 
+
+If expression is true then it executes the commands
+NOTE: If the expression is false, then it will perform the conditions in else
+
+
+* Else If
+
+
+    if [ expression1 ]; then
+        command1
+    
+    elif [expression2 ]; then
+        command2
+
+    elif  [expression3 ]; then
+        command3
+
+    else
+        command-x
+    fi 
+
+COMMENT
+
+
 
 #there are 3 type of if else statement
 #1)simple if

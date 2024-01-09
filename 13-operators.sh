@@ -23,6 +23,7 @@ Operators on Strings:
     [ abc = abc ] (we are assigning rightside value to left side )
     [ abc == abc ] ( we are comparing left side with right side )
     [ abc != efg ] ( we saying that left side is not equal to right side )
+    
     -z , -n 
 
     [ -z "$var" ] -> This is true if var is not having any data
