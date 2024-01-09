@@ -60,7 +60,7 @@ COMMENT
 #2) if else
 #3) else if
 
-
+<<COMMENT
 #simple if
 
 Action=$1
@@ -79,6 +79,7 @@ else
     echo -e "\e[36m the possible input is start \e[0m"
 
 fi
+COMMENT
 
 #else-if
 
