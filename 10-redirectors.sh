@@ -1,5 +1,31 @@
 #!/bin/bash
 
+<<COMMENT
+### Redirectors :
+
+
+>   : Standard Output to a file : ( This will override the existing content on the file : > = 1> )
+>>  : Standard Output to a file : ( But, this will not override, just appends on the top of the file )
+
+2>  : Standard Error to a file  
+
+&>  : Redirects both standard output and standard error
+&>> : Redirects both standard output and standard error, but appends on the top of the exiting content.
+
+<   : This is to read something from a file and do an action
+
+
+
+Exit Status : Every command that you execute will return some status code and based on that code we can decide whether the command is success / failure /partially completed and the command to see the exit code of the previous command is `$?`
+
+
+In Linux, exit codes range from 0 to 255.
+
+0      : Exit Code means, command completed successfully
+1-255  : Either partially completed or failed 
+
+COMMENT
+
 
 #redirectors
 
