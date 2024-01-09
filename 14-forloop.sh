@@ -8,3 +8,6 @@
     done
 COMMENT
 
+for time in 1pm 2pm 3pm 4pm 5pm 6pm; do
+    echo "the time is $time"
+done
