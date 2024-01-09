@@ -69,21 +69,20 @@ echo no of variables used is $#
 #functions 
 
 #decleration of function
-
+ 
 sample1 (){
     echo welcome to devops learning
     echo this is batch num 54
     echo  this is end of sample function
     echo calling function2
     
-    status
-
+    
 }
 
 #calling function
 
 sample1
-
+status
 #function #2
 
 status(){
