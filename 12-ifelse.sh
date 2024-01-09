@@ -9,3 +9,6 @@
 
 #simple if
 
+if ["Action==start"] ; then
+    echo "Starting the rabbit MQ"
+fi
