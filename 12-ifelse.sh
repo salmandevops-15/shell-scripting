@@ -9,8 +9,9 @@
 
 #simple if
 
-Action=$1
+ACTION=$1
 
-if [ "Action" == "start" ] ; then
+if [ "ACTION" == "start" ] ; then
         echo "starting the rabbitMQ"
+
 fi
