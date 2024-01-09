@@ -3,19 +3,19 @@
 
 <<COMMENT
 ### Expressions are categorized in to three
-```
+
     1. Numbers
     2. Strings
     3. Files
-```
+
 
 Operators on numbers:
-```
+
     -eq , -ne , -gt, -ge, -lt, -le
 
     [ 1 -eq 1 ] 
     [ 1 -ne 1 ]
-```
+
 
 Operators on Strings:
     = , == , !=
