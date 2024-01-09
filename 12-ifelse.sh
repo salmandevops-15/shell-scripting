@@ -10,6 +10,8 @@
 #simple if
 Action=$1
 
-if [ "Action" == "start" ] ; then
+if ["Action"=="start"]; then
+
     echo "Starting the rabbit MQ"
+
 fi
