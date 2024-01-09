@@ -84,17 +84,22 @@ fi
 
 if [ "$Action" == "start" ] ; then
     echo -e "\e[32m strating RabbitMQ \e[0m"
+    exit 0
 
 elif [ "$Action" == "stop" ] ; then
     echo -e "\e[31m stopping Rabbit MQ \e[0m"
+    exit 1
 
 elif [ "$Action" == "restart" ] ; then
     echo -e "\e[34m restarting Rabbit MQ \e[0m"
+    exit 2
 
 elif [ "$Action" == "enable" ] ; then
     echo -e "\e[35m enabling Rabbit MQ \e[0m"
+    exit 3
 
 else 
     echo -e "\e[36m the possible input are start -- stop -- restart -- enable \e[0m"
+    exit 4
 
 fi
