@@ -8,8 +8,8 @@
 
 
 #simple if
-Action=$1
+ACTION=$1
 
-if ["$Action"=="start"]; then
-    echo "Starting the rabbit MQ"
+if [ "$ACTION" == "start" ] ; then 
+        echo -e "\e[32m Starting RabbitMQ Service \e[0m"
 fi
