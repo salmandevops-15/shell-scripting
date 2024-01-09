@@ -60,15 +60,17 @@ COMMENT
 #2) if else
 #3) else if
 
-
-#simple if
+#decleration of variable
 
 Action=$1
+
+#simple if
 
 if [ "$Action" == "start" ] ; then
     echo -e "\e[32m starting the rabbitMQ \e[0m"
 
 fi
+
 
 #if-else statement
 
