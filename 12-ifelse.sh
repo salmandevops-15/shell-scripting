@@ -12,7 +12,7 @@
 ACTION=$1
 
 if [ "ACTION" == "start" ] ; then
-        echo "starting the rabbitMQ"
+        echo -e "\e[32m starting the rabbitMQ \e[0m"
 
 fi
 
