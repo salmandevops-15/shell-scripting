@@ -90,9 +90,8 @@ status(){
     echo -e "\e[35m no of session is $(who | wc -l) \e[0m"
 }
 
-status
 #calling function 2
-
+status
 
 
 
