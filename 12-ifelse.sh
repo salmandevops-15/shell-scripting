@@ -15,3 +15,11 @@ if [ "$Action" == "start" ] ; then
     echo -e "\e[32m starting the rabbitMQ \e[0m"
 
 fi
+
+if [ "$Action" == "start" ] ; then
+    echo "starting Rabbit MQ"
+
+else
+    echo "the possible input is start"
+
+fi
