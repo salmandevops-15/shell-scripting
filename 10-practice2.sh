@@ -14,5 +14,6 @@
  we can see this part of the script is not executed 
 ppqtwwiyuassb
 
-
 COMMENT
+
+echo this is practice2
