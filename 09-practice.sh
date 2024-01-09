@@ -82,7 +82,7 @@ sample1 (){
 #calling function
 
 sample1
-status
+
 #function #2
 
 status(){
@@ -90,6 +90,7 @@ status(){
     echo -e "\e[35m no of session is $(who | wc -l) \e[0m"
 }
 
+status
 #calling function 2
 
 
