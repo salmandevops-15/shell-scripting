@@ -83,6 +83,8 @@ COMMENT
 
 #else-if
 
+Action=$1
+
 if [ "$Action" == "start" ] ; then
     echo -e "\e[32m strating RabbitMQ \e[0m"
     exit 0
