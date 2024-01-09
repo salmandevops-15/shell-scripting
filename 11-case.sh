@@ -17,6 +17,6 @@ case $Action in
     echo -e "\e[36m enabling the rabbit MQ \e[0m"
     ;;
     *)
-    echo -e "\e[35m the possible inputs are start -- stop -- restrat -- enable \e[0m"
+    echo -e "\e[35m the possible inputs are start -- stop -- restart -- enable \e[0m"
     ;;
 esac
