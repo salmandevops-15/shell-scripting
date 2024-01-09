@@ -19,23 +19,7 @@ COMMENT
 echo this is practice2
 
 
-Action=$1
-
-case $Action in 
-
-    start)
-    echo -e "\e[32m starting the rabbit MQ \e[0m"
-    ;;
-    stop)
-    echo -e "\e[31m stopping the rabbitMQ \e[0m"
-    ;;
-    restart)
-    echo -e "\e[34m restarting the rabbit MQ \e[0m"
-    ;;
-    enable)
-    echo -e "\e[36m enabling the rabbit MQ \e[om"
-    ;;
-    *)
-    echo -e "\e[35m the possible inputs are start -- stop -- restrat -- enable \e[0m"
-    ;;
-esac
+#quotes 
+#there are 2 types of quotes
+#1) double quote "" (this will consider the variable and display the variable value ex: echo "the value of a is ${a}"  the o/p will be the value of a is 53 or whatever variable is declared)
+#2) single quote '' (this will not consider the variable and displays as a string ex: echo 'the value of a is ${a}'  the o/p will be the value of a is ${a})
