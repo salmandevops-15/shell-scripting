@@ -4,6 +4,7 @@
 
 COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.logs"
+APPUSER=roboshop
 
 ID=$(id -u)
 
@@ -31,6 +32,11 @@ echo -n "Installing the ${COMPONENT} :"
 yum install nodejs -y          &>> $LOGFILE
 stat $?
 
+id $APPUSER
+if [ $? -ne 0 ] ; then
+echo -n "Creating a servive account user :"
+useradd $APPUSER
+stat $?
 
 
 
