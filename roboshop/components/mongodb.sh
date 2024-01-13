@@ -25,8 +25,16 @@ stat $?
 
 echo -n "Installing the ${COMPONENT} :"
 yum install -y ${COMPONENT}-org         &>> LOGFILE
+stat $?
+
+echo -n "Updating the ${COMPONENT}.conf for DB visibility :"
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
+stat $?
+
+echo -n "Starting the ${COMPONENT} :"
+systemctl daemon-reload mongod          &>> LOGFILE
+systemctl restart mongod                &>> LOGFILE
 systemctl enable mongod                 &>> LOGFILE
-systemctl start mongod                  &>> LOGFILE
 stat $?
 
 # 1. Setup MongoDB repos.
