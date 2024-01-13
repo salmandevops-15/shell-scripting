@@ -44,10 +44,10 @@ stat $?
 
 echo -n "Injecting the schema :"
 cd /tmp
-unzip ${COMPONENT}.zip
+unzip ${COMPONENT}.zip                  &>> LOGFILE
 cd ${COMPONENT}-main
-mongo < catalogue.js
-mongo < users.js
+mongo < catalogue.js                    &>> LOGFILE
+mongo < users.js                        &>> LOGFILE
 stat $?
 
 
