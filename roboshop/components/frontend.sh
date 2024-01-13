@@ -1,8 +1,8 @@
 #!/bin/bash
 
-ID = $(id -u)
+ID=$(id -u)
 
-if [ $ID -ne 0 ] ; then
+if [$ID -ne 0] ; then
     echo -e "\e[31m this script needs to run by a root user or user with sudo privilage \e[0m"
 fi
 
