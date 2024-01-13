@@ -21,6 +21,9 @@ fi
 
 }
 
+echo -e "************ \e[36m Installation of ${COMPONENT} has Started \e[0m ***************"
+
+
 
 
 
