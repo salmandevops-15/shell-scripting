@@ -27,6 +27,8 @@ else
     echo -e "\e[31m FAILURE \e[0m"
 fi
 
+echo -n "Downloading the frontend content :"
+curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
 
 
