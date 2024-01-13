@@ -23,12 +23,12 @@ echo -e "************ \e[36m Installation of ${COMPONENT} has Started \e[0m ****
 
 
 echo -n "installing nginx:"
-yum install nginx -y        &>> LOGFILE
+yum install nginx -y         &>> $LOGFILE
 stat $?
 
 echo -n "Starting the nginx :"
-systemctl enable nginx      &>> LOGFILE
-systemctl start nginx       &>> LOGFILE
+systemctl enable nginx       &>> $LOGFILE
+systemctl start nginx        &>> $LOGFILE
 stat $?
 
 
@@ -39,7 +39,7 @@ stat $?
 echo -n "Extracting ${COMPONENT} component :"
 cd /usr/share/nginx/html
 rm -rf *
-unzip /tmp/${COMPONENT}.zip       &>> LOGFILE
+unzip /tmp/${COMPONENT}.zip        &>> $LOGFILE
 mv ${COMPONENT}-main/* .
 mv static/* .
 rm -rf ${COMPONENT}-main README.md
@@ -48,8 +48,8 @@ stat $?
 
 
 echo -n "Starting the ${COMPONENT} :"
-systemctl enable nginx      &>> LOGFILE
-systemctl start nginx       &>> LOGFILE
+systemctl enable nginx       &>> $LOGFILE
+systemctl start nginx        &>> $LOGFILE
 stat $?
 
 
