@@ -1,7 +1,7 @@
 #!/bin/bash
 
 COMPONENT=frontend
-LOGFILE="/tmp/frontend.logs"
+LOGFILE="/tmp/${COMPONENT}.logs"
 
 ID=$(id -u)
 
@@ -29,20 +29,25 @@ systemctl start nginx       &>> LOGFILE
 stat $?
 
 
-echo -n "Downloading the frontend content :"
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+echo -n "Downloading the ${COMPONENT} content :"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 stat $?
 
-echo -n "Extracting frontend component :"
+echo -n "Extracting ${COMPONENT} component :"
 cd /usr/share/nginx/html
 rm -rf *
-unzip /tmp/frontend.zip       &>> LOGFILE
-mv frontend-main/* .
+unzip /tmp/${COMPONENT}.zip       &>> LOGFILE
+mv ${COMPONENT}-main/* .
 mv static/* .
-rm -rf frontend-main README.md
+rm -rf ${COMPONENT}-main README.md
 mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
+
+echo -n "Starting the ${COMPONENT} :"
+systemctl enable nginx      &>> LOGFILE
+systemctl start nginx       &>> LOGFILE
+stat $?
 
 
 
