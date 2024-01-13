@@ -30,6 +30,13 @@ fi
 echo -n "Downloading the frontend content :"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 
+if [ $? -eq 0 ] ; then
+    echo -e "\e[32m SUCCESSFUL \e[0m"
+else
+    echo -e "\e[31m FAILURE \e[0m"
+fi
+
+
 
 
 
