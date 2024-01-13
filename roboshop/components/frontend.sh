@@ -1,5 +1,8 @@
 #!/bin/bash
 
+COMPONENT=frontend
+LOGFILE="/tmp/frontend.logs"
+
 ID=$(id -u)
 
 if [ $ID -ne 0 ] ; then
@@ -17,12 +20,12 @@ fi
 }
 
 echo -n "installing nginx:"
-yum install nginx -y        &>> "/tmp/frontend.logs"
+yum install nginx -y        &>> LOGFILE
 stat $?
 
 echo -n "Starting the nginx :"
-systemctl enable nginx      &>> "/tmp/frontend.logs"
-systemctl start nginx       &>> "/tmp/frontend.logs"
+systemctl enable nginx      &>> LOGFILE
+systemctl start nginx       &>> LOGFILE
 stat $?
 
 
@@ -30,6 +33,15 @@ echo -n "Downloading the frontend content :"
 curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
 stat $?
 
+echo -n "Extracting frontend component :"
+cd /usr/share/nginx/html
+rm -rf *
+unzip /tmp/frontend.zip       &>> LOGFILE
+mv frontend-main/* .
+mv static/* .
+rm -rf frontend-main README.md
+mv localhost.conf /etc/nginx/default.d/roboshop.conf
+stat $?
 
 
 
