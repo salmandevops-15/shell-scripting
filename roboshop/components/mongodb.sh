@@ -27,7 +27,7 @@ curl -s -o /etc/yum.repos.d/${COMPONENT}.repo https://raw.githubusercontent.com/
 stat $?
 
 echo -n "Installing the ${COMPONENT} :"
-yum install -y ${COMPONENT}-org         &>> LOGFILE
+yum install -y ${COMPONENT}-org          &>> $LOGFILE
 stat $?
 
 echo -n "Updating the ${COMPONENT}.conf for DB visibility :"
@@ -35,9 +35,9 @@ sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongod.conf
 stat $?
 
 echo -n "Starting the ${COMPONENT} :"
-systemctl daemon-reload mongod          &>> LOGFILE
-systemctl restart mongod                &>> LOGFILE
-systemctl enable mongod                 &>> LOGFILE
+systemctl daemon-reload mongod           &>> $LOGFILE
+systemctl restart mongod                 &>> $LOGFILE
+systemctl enable mongod                  &>> $LOGFILE
 stat $?
 
 echo -n "Downloading the schema :"
@@ -47,13 +47,13 @@ stat $?
 
 echo -n "Extraction  the schema :"
 cd /tmp
-unzip -o ${COMPONENT}.zip                  &>> LOGFILE
+unzip -o ${COMPONENT}.zip                   &>> $LOGFILE
 stat $?
 
 echo -n "Injection of schema :"
 cd ${COMPONENT}-main
-mongo < catalogue.js                    &>> LOGFILE
-mongo < users.js                        &>> LOGFILE
+mongo < catalogue.js                     &>> $LOGFILE
+mongo < users.js                         &>> $LOGFILE
 stat $?
 
 
