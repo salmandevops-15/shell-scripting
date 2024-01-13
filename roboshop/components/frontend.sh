@@ -16,6 +16,21 @@ else
     echo -e "\e[31m FAILURE \e[0m"
 fi
 
+echo -n "Starting the nginx :"
+systemctl enable nginx
+systemctl start nginx
+
+if [ $? -eq 0 ] ; then
+    echo -e "\e[32m SUCCESSFUL \e[0m"
+else
+    echo -e "\e[31m FAILURE \e[0m"
+fi
+
+
+
+
+
+
 # ```
 # # yum install nginx -y
 # # systemctl enable nginx
