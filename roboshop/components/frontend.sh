@@ -8,7 +8,7 @@ if [ $ID -ne 0 ] ; then
 fi
 
 echo -n "installing nginx:"
-yum install nginx -y
+yum install nginx -y   &>> "/tmp/frontend.logs"
 
 # ```
 # # yum install nginx -y
