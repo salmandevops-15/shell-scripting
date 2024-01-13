@@ -20,11 +20,11 @@ fi
 }
 
 echo -n "Configuring the ${COMPONENT} Repo :"
-curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo  &>> LOGFILE
+curl -s -o /etc/yum.repos.d/${COMPONENT}.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo  &>> LOGFILE
 stat $?
 
 echo -n "Installing the ${COMPONENT} :"
-yum install -y mongodb-org              &>> LOGFILE
+yum install -y ${COMPONENT}-org         &>> LOGFILE
 systemctl enable mongod                 &>> LOGFILE
 systemctl start mongod                  &>> LOGFILE
 stat $?
@@ -32,7 +32,7 @@ stat $?
 # 1. Setup MongoDB repos.
 
 # ```bash
-# # curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
+# # curl -s -o /etc/yum.repos.d/${COMPONENT}odb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
 # ```
 
 # 1. Install Mongo & Start Service.
