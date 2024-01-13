@@ -8,7 +8,7 @@ if [ $ID -ne 0 ] ; then
 fi
 
 echo -n "installing nginx:"
-yum install nginx -y   &>> "/tmp/frontend.logs"
+yum install nginx -y        &>> "/tmp/frontend.logs"
 
 if [ $? -eq 0 ] ; then
     echo -e "\e[32m SUCCESSFUL \e[0m"
@@ -17,8 +17,9 @@ else
 fi
 
 echo -n "Starting the nginx :"
-systemctl enable nginx
-systemctl start nginx
+systemctl enable nginx      &>> "/tmp/frontend.logs"
+systemctl start nginx       &>> "/tmp/frontend.logs"
+
 
 if [ $? -eq 0 ] ; then
     echo -e "\e[32m SUCCESSFUL \e[0m"
