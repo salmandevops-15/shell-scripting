@@ -24,7 +24,7 @@ fi
 echo -e "************ \e[36m Installation of ${COMPONENT} has Started \e[0m ***************"
 
 echo -n "Configuring the ${COMPONENT} repo :"
-yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y  
+yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y  &>> $LOGFILE
 stat $?
 
 echo -n "Installing the ${COMPONENT} :"
