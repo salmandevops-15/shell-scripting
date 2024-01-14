@@ -37,7 +37,6 @@ if [ $? -ne 0 ] ; then
     echo -n "Creating a servive account user :"
     useradd roboshop                &>> $LOGFILE
 fi
-stat $?
 
 
 
