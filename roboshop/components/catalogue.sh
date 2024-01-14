@@ -51,9 +51,9 @@ echo -n "Copying the ${COMPONENT} to $APPUSER home directory:"
 stat $?
 
 echo -n "Installing the dependencies :"
-    mv -f catalogue-main catalogue
+    mv -f catalogue-main catalogue      &>> $LOGFILE
     cd /home/$APPUSER/catalogue
-    npm install                     &>> $LOGFILE
+    npm install                         &>> $LOGFILE
 stat $?
 
 
