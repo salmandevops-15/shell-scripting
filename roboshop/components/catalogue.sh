@@ -25,27 +25,36 @@ fi
 echo -e "************ \e[36m Installation of ${COMPONENT} has Started \e[0m ***************"
 
 echo -n "Configuring the ${COMPONENT} repo :"
-curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -        &>> $LOGFILE
+    curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -        &>> $LOGFILE
 stat $?
 
 echo -n "Installing the ${COMPONENT} :"
-yum install nodejs -y           &>> $LOGFILE
+    yum install nodejs -y           &>> $LOGFILE
 stat $?
 
 
 echo -n "Creating a service account :"
-id roboshop                     &>> $LOGFILE
+id $APPUSER                     &>> $LOGFILE
 if [ $? -ne 0 ] ; then
     echo -n "Creating a servive account user :"
-    useradd roboshop                &>> $LOGFILE
+    useradd $APPUSER                &>> $LOGFILE
 fi
 stat $?
 
 echo -n "Dowloading the ${COMPONENT} :"
-curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
+    curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
 stat $?
 
+echo -n "Copying the ${COMPONENT} to $APPUSER home directory:"
+    cd /home/$APPUSER
+    unzip /tmp/catalogue.zip        &>> $LOGFILE
+stat $?
 
+echo -n "Installing the dependencies :"
+    mv catalogue-main catalogue
+    cd /home/$APPUSER/catalogue
+    npm install                     &>> $LOGFILE
+stat $?
 
 
 
