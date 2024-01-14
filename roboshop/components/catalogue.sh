@@ -50,8 +50,12 @@ echo -n "Copying the ${COMPONENT} to $APPUSER home directory:"
     unzip -o /tmp/catalogue.zip        &>> $LOGFILE
 stat $?
 
-echo -n "Installing the dependencies :"
+echo -n "Modifying the ownership :"
     mv -f catalogue-main catalogue      &>> $LOGFILE
+    chown -R $APPUSER:$APPUSER /home/$APPUSER/${COMPONENT}/
+stat $?
+
+echo -n "Installing the dependencies :"
     cd /home/$APPUSER/catalogue
     npm install                         &>> $LOGFILE
 stat $?
