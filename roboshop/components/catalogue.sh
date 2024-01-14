@@ -32,11 +32,14 @@ echo -n "Installing the ${COMPONENT} :"
 yum install nodejs -y           &>> $LOGFILE
 stat $?
 
+
+echo -n "Creating a service account :"
 id roboshop                     &>> $LOGFILE
 if [ $? -ne 0 ] ; then
     echo -n "Creating a servive account user :"
     useradd roboshop                &>> $LOGFILE
 fi
+stat $?
 
 
 
