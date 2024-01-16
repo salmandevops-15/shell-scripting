@@ -23,22 +23,22 @@ fi
 stat $?
 
 echo -n "Dowloading the ${COMPONENT} :"
-    curl -s -L -o /tmp/catalogue.zip "https://github.com/stans-robot-project/catalogue/archive/main.zip"
+    curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
 stat $?
 
 echo -n "Copying the ${COMPONENT} to $APPUSER home directory:"
     cd /home/$APPUSER
     rm -r ${COMPONENT}                 &>> $LOGFILE
-    unzip -o /tmp/catalogue.zip        &>> $LOGFILE
+    unzip -o /tmp/${COMPONENT}.zip        &>> $LOGFILE
 stat $?
 
 echo -n "Modifying the ownership :"
-    mv -f catalogue-main/ catalogue/      &>> $LOGFILE
+    mv -f ${COMPONENT}-main/ ${COMPONENT}/      &>> $LOGFILE
     chown -R $APPUSER:$APPUSER /home/$APPUSER/${COMPONENT}/
 stat $?
 
 echo -n "Installing the dependencies :"
-    cd /home/$APPUSER/catalogue
+    cd /home/$APPUSER/${COMPONENT}
     npm install                         &>> $LOGFILE
 stat $?
 
@@ -49,8 +49,8 @@ stat $?
 
 echo -n "Starting the ${COMPONENT} :"
 systemctl daemon-reload         &>> $LOGFILE
-systemctl start catalogue       &>> $LOGFILE
-systemctl enable catalogue      &>> $LOGFILE
+systemctl start ${COMPONENT}       &>> $LOGFILE
+systemctl enable ${COMPONENT}      &>> $LOGFILE
 stat $?
 
 
