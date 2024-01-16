@@ -60,4 +60,15 @@ echo -n "Installing the dependencies :"
     npm install                         &>> $LOGFILE
 stat $?
 
+echo -n "Updating Dns_name in systemd file :"
+sed -i -e 's/MONGO_DNSNAME/mongod.roboshop.internal/'   /home/${APPUSER}/${COMPONENT}/systemd.service
+mv /home/${APPUSER}/${COMPONENT}/systemd.service  /etc/systemd/system/${COMPONENT}.service
+stat $?
+
+echo -n "Starting the ${COMPONENT} :"
+systemctl daemon-reload         &>> $LOGFILE
+systemctl start catalogue       &>> $LOGFILE
+systemctl enable catalogue      &>> $LOGFILE
+stat $?
+
 
