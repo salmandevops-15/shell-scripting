@@ -51,7 +51,7 @@ echo -n "Copying the ${COMPONENT} to $APPUSER home directory:"
 stat $?
 
 echo -n "Modifying the ownership :"
-    mv -f catalogue-main catalogue      &>> $LOGFILE
+    mv -f catalogue-main/ catalogue/      &>> $LOGFILE
     chown -R $APPUSER:$APPUSER /home/$APPUSER/${COMPONENT}/
 stat $?
 
