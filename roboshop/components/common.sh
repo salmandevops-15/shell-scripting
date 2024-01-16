@@ -86,6 +86,14 @@ echo -n "Installing the ${COMPONENT} :"
     yum install nodejs -y           &>> $LOGFILE
 stat $?
 
+CREATING_USER
+
+DOWNLOAD_AND_EXTRACT
+
+NPM_INSTALL
+
+CONFIGURE_SVC
+
 }
 
 echo -e "************ \e[36m Installation of ${COMPONENT} has Started \e[0m ***************"
