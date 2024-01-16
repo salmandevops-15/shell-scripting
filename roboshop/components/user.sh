@@ -33,24 +33,25 @@ echo -n "Copying the ${COMPONENT} to $APPUSER home directory:"
 stat $?
 
 echo -n "Modifying the ownership :"
-    mv -f catalogue-main/ catalogue/      &>> $LOGFILE
+    mv -f ${COMPONENT}-main/ ${COMPONENT}/      &>> $LOGFILE
     chown -R $APPUSER:$APPUSER /home/$APPUSER/${COMPONENT}/
 stat $?
 
 echo -n "Installing the dependencies :"
-    cd /home/$APPUSER/catalogue
+    cd /home/$APPUSER/${COMPONENT}
     npm install                         &>> $LOGFILE
 stat $?
 
 echo -n "Updating Dns_name in systemd file :"
-sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal/"   /home/${APPUSER}/${COMPONENT}/systemd.service
+
+sed -i -e "s/MONGO_DNSNAME/mongodb.roboshop.internal/" -e "s/REDIS_DNSNAME/redis.roboshop.internal/"  /home/${APPUSER}/${COMPONENT}/systemd.service
 mv /home/${APPUSER}/${COMPONENT}/systemd.service  /etc/systemd/system/${COMPONENT}.service
 stat $?
 
 echo -n "Starting the ${COMPONENT} :"
-systemctl daemon-reload         &>> $LOGFILE
-systemctl start catalogue       &>> $LOGFILE
-systemctl enable catalogue      &>> $LOGFILE
+systemctl daemon-reload              &>> $LOGFILE
+systemctl enable ${COMPONENT}        &>> $LOGFILE
+systemctl restart ${COMPONENT}       &>> $LOGFILE
 stat $?
 
 
