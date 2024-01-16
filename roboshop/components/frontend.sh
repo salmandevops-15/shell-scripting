@@ -48,7 +48,7 @@ stat $?
 
 
 echo -n "Updating Reverse proxy with internal DNS_NAME :"
-for component in catalogue user cart payment shipping ; do
+for component in catalogue user cart shipping payment; do
 sed -i -e '/$component/s/localhost/$component.roboshop.internal/'   /etc/nginx/default.d/roboshop.conf
 done
 
