@@ -9,20 +9,8 @@ NODEJS
 
 CREATING_USER
 
-echo -n "Dowloading the ${COMPONENT} :"
-    curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
-stat $?
+DOWNLOAD_AND_EXTRACT
 
-echo -n "Copying the ${COMPONENT} to $APPUSER home directory:"
-    cd /home/$APPUSER
-    rm -r ${COMPONENT}                 &>> $LOGFILE
-    unzip -o /tmp/${COMPONENT}.zip        &>> $LOGFILE
-stat $?
-
-echo -n "Modifying the ownership :"
-    mv -f ${COMPONENT}-main/ ${COMPONENT}/      &>> $LOGFILE
-    chown -R $APPUSER:$APPUSER /home/$APPUSER/${COMPONENT}/
-stat $?
 
 echo -n "Installing the dependencies :"
     cd /home/$APPUSER/${COMPONENT}

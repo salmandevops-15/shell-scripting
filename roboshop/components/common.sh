@@ -51,6 +51,15 @@ stat $?
 
 }
 
+NPM_INSTALL () {
+    
+    echo -n "Installing the dependencies :"
+    cd /home/$APPUSER/${COMPONENT}
+    npm install                         &>> $LOGFILE
+stat $?
+
+}
+
 
 NODEJS () {
 
