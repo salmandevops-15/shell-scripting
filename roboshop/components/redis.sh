@@ -27,7 +27,7 @@ curl -s -L https://raw.githubusercontent.com/stans-robot-project/redis/main/redi
 stat $?
 
 echo -n "Installing the ${COMPONENT} :"
-yum install -y ${COMPONENT}-org          &>> $LOGFILE
+yum install redis-6.2.13 -y        &>> $LOGFILE
 stat $?
 
 echo -n "Updating the ${COMPONENT}.conf for DB visibility :"
