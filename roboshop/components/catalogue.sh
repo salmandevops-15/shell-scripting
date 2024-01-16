@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
 
 COMPONENT=catalogue
 LOGFILE="/tmp/${COMPONENT}.logs"
