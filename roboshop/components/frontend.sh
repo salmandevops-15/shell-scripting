@@ -49,7 +49,7 @@ stat $?
 
 echo -n "Updating Reverse proxy with internal DNS_NAME :"
 for component in catalogue user cart payment shipping ; do
-sed -i -e '/${COMPONENT}/s/localhost/${COMPONENT}.roboshop.internal/'   /etc/nginx/default.d/roboshop.conf
+sed -i -e '/$component/s/localhost/$component.roboshop.internal/'   /etc/nginx/default.d/roboshop.conf
 done
 
 echo -n "Starting the ${COMPONENT} :"
