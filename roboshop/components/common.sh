@@ -19,6 +19,8 @@ fi
 
 }
 
+echo -e "************ \e[36m Installation of ${COMPONENT} has Started \e[0m ***************"
+
 CREATING_USER () {
 
     echo -n "Creating a service account :"
@@ -95,5 +97,3 @@ NPM_INSTALL
 CONFIGURE_SVC
 
 }
-
-echo -e "************ \e[36m Installation of ${COMPONENT} has Started \e[0m ***************"
