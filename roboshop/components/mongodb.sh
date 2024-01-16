@@ -61,22 +61,3 @@ echo -e "************ \e[36m Installation of ${COMPONENT} is Completed \e[0m ***
 
 
 
-
-# 1. Setup MongoDB repos.
-
-# ```bash
-# # curl -s -o /etc/yum.repos.d/${COMPONENT}odb.repo https://raw.githubusercontent.com/stans-robot-project/mongodb/main/mongo.repo
-# ```
-
-# 1. Install Mongo & Start Service.
-
-# ```bash
-# # yum install -y mongodb-org
-# # systemctl enable mongod
-# # systemctl start mongod
-
-# ```
-
-# 1. Update Listen IP address from 127.0.0.1 to 0.0.0.0 in the config file, so that MongoDB can be accessed by other services.
-
-# Config file:   `# vim /etc/mongod.conf`
