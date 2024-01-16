@@ -19,6 +19,18 @@ fi
 
 }
 
+CREATING_USER () {
+    
+    echo -n "Creating a service account :"
+id $APPUSER                     &>> $LOGFILE
+if [ $? -ne 0 ] ; then
+    echo -n "Creating a servive account user :"
+    useradd $APPUSER                &>> $LOGFILE
+fi
+stat $?
+
+}
+
 NODEJS () {
     echo -n "Configuring the ${COMPONENT} repo :"
     curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -        &>> $LOGFILE

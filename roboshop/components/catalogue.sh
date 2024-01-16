@@ -5,14 +5,7 @@ COMPONENT=catalogue
 
 source components/common.sh
 
-echo -n "Configuring the ${COMPONENT} repo :"
-    curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -        &>> $LOGFILE
-stat $?
-
-echo -n "Installing the ${COMPONENT} :"
-    yum install nodejs -y           &>> $LOGFILE
-stat $?
-
+NODEJS
 
 echo -n "Creating a service account :"
 id $APPUSER                     &>> $LOGFILE
