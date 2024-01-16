@@ -19,4 +19,15 @@ fi
 
 }
 
+NODEJS () {
+    echo -n "Configuring the ${COMPONENT} repo :"
+    curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -        &>> $LOGFILE
+stat $?
+
+echo -n "Installing the ${COMPONENT} :"
+    yum install nodejs -y           &>> $LOGFILE
+stat $?
+
+}
+
 echo -e "************ \e[36m Installation of ${COMPONENT} has Started \e[0m ***************"
