@@ -88,12 +88,12 @@ echo -n "Installing the ${COMPONENT} :"
     yum install nodejs -y           &>> $LOGFILE
 stat $?
 
-CREATING_USER
+CREATING_USER                           #calling creating user function
 
-DOWNLOAD_AND_EXTRACT
+DOWNLOAD_AND_EXTRACT                    #calling download and extract function
 
-NPM_INSTALL
+NPM_INSTALL                             #calling npm installation function
 
-CONFIGURE_SVC
+CONFIGURE_SVC                           #calling cinfiguration function
 
 }
