@@ -72,3 +72,4 @@ systemctl enable catalogue      &>> $LOGFILE
 stat $?
 
 
+echo -e "************ \e[36m Installation of ${COMPONENT} has Completed \e[0m ***************"
