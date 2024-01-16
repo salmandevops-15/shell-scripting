@@ -61,12 +61,3 @@ echo -n "Installing the dependencies :"
 stat $?
 
 
-
-# This service is written in NodeJS, Hence need to install NodeJS in the system.
-# # yum install https://rpm.nodesource.com/pub_16.x/nodistro/repo/nodesource-release-nodistro-1.noarch.rpm -y
-# # yum install nodejs -y  
-
-# ​
-# Let's now set up the catalogue application.
-# As part of operating system standards, we run all applications as an application user only. Hence, we create and configure everything as an app user. Let’s create “roboshop” user.
-# # useradd roboshop
