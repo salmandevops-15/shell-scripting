@@ -7,13 +7,7 @@ source components/common.sh
 
 NODEJS
 
-echo -n "Creating a service account :"
-id $APPUSER                     &>> $LOGFILE
-if [ $? -ne 0 ] ; then
-    echo -n "Creating a servive account user :"
-    useradd $APPUSER                &>> $LOGFILE
-fi
-stat $?
+CREATING_USER
 
 echo -n "Dowloading the ${COMPONENT} :"
     curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/${COMPONENT}/archive/main.zip"
