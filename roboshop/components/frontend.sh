@@ -47,10 +47,12 @@ mv localhost.conf /etc/nginx/default.d/roboshop.conf
 stat $?
 
 
-echo -n "Updating Reverse proxy with internal DNS_NAME :"
+echo -n "Updating Reverse proxy with internal DNS_NAME : "
 for component in catalogue user cart shipping payment; do
-sed -i -e '/$component/s/localhost/$component.roboshop.internal/'   /etc/nginx/default.d/roboshop.conf
+sed -i -e "/$component/s/localhost/$component.roboshop.internal/"   /etc/nginx/default.d/roboshop.conf
 done
+
+
 
 echo -n "Starting the ${COMPONENT} :"
 systemctl enable nginx       &>> $LOGFILE
