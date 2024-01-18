@@ -31,8 +31,4 @@ rabbitmqctl set_user_tags roboshop administrator
 rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
 stat $?
 
-
-
-# rabbitmqctl add_user roboshop roboshop123
-# rabbitmqctl set_user_tags roboshop administrator
-# rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+echo -e "************ \e[36m Installation of ${COMPONENT} has Completed \e[0m ***************"
