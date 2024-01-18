@@ -103,7 +103,7 @@ JAVA(){
 
 PYTHON () {
     echo -n "installing python :"
-    yum install python36 gcc python3-devel -y
+    yum install python36 gcc python3-devel -y           &>> $LOGFILE
 
     CREATING_USER
 
@@ -111,10 +111,10 @@ PYTHON () {
 
     echo -n "Installing the dependencies :"
     cd /home/roboshop/payment 
-    pip3 install -r requirements.txt
+    pip3 install -r requirements.txt                      &>> $LOGFILE
     stat $?
 
-    
+
 
 }
 
