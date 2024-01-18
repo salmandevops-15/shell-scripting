@@ -10,23 +10,23 @@ curl -s -L -o /etc/yum.repos.d/mysql.repo https://raw.githubusercontent.com/stan
 stat $?
 
 echo -n "Installing the ${COMPONENT} :"
-yum install mysql-community-server -y
+yum install mysql-community-server -y       &>> $LOGFILE
 stat $?
 
 
 echo -n "Starting the ${COMPONENT} :"
-systemctl enable mysqld 
-systemctl start mysqld
+systemctl enable mysqld                     &>> $LOGFILE
+systemctl start mysqld                      &>> $LOGFILE
 stat $?
 
 echo -n "fetching the root user default password :"
-DEFAULT_ROOT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')
+DEFAULT_ROOT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')      &>> $LOGFILE
 stat $?
 
 echo "show databases;" | mysql -uroot -pRoboShop@1
 if [ $? -ne 0 ]; then
 echo -n "Updating the Root user password with std password:"
-echo "ALTER USER 'root'@'localhost' IDENTIFIED BY RoboShop@1;" | mysql --connect -expired -password -uroot -p${DEFAULT_ROOT_PASSWORD}
+echo "ALTER USER 'root'@'localhost' IDENTIFIED BY RoboShop@1;" | mysql -connect -expired -password -uroot -p${DEFAULT_ROOT_PASSWORD}
 stat $?
 fi
 
