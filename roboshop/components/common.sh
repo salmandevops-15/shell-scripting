@@ -80,7 +80,7 @@ echo -e "************ \e[36m Installation of ${COMPONENT} has Completed \e[0m **
 }
 
 MVN_PACKAGE () {
-    
+
     cd ${COMPONENT} 
     mvn clean package                                   &>> $LOGFILE
     mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar         &>> $LOGFILE
@@ -98,6 +98,23 @@ JAVA(){
     MVN_PACKAGE
 
     CONFIGURE_SVC
+
+}
+
+PYTHON () {
+    echo -n "installing python :"
+    yum install python36 gcc python3-devel -y
+
+    CREATING_USER
+
+    DOWNLOAD_AND_EXTRACT
+
+    echo -n "Installing the dependencies :"
+    cd /home/roboshop/payment 
+    pip3 install -r requirements.txt
+    stat $?
+
+    
 
 }
 
