@@ -115,6 +115,13 @@ PYTHON () {
     stat $?
 
 
+    echo -n "Fetching the uid and gid :"
+    USERID=$(id -u  roboshop)
+    GROUPID=$(id -g roboshop)
+
+    echo -n "Updating uid and gid in ${COMPONENT}.ini :"
+    sed -i -e "/^uid/ c uid={USERID}" -e "/^gid/ c uid={GROUPID}"    ${COMPONENT}.ini    
+    stat $?
 
 }
 
