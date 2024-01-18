@@ -41,18 +41,18 @@ fi
 
 
 echo -n "Downloading the ${COMPONENT} schema :"
-curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/mysql/archive/main.zip"
+curl -s -L -o /tmp/${COMPONENT}.zip "https://github.com/stans-robot-project/mysql/archive/main.zip"     &>> $LOGFILE
 stat $?
 
 
 echo -n "Extracting the ${COMPONENT} schema :"
 cd /tmp
-unzip ${COMPONENT}.zip
+unzip ${COMPONENT}.zip                                  &>> $LOGFILE
 stat $?
 
 echo -n "Injecting the ${COMPONENT} schema :"
 cd ${COMPONENT}-main
-mysql -u root -pRoboShop@1 <shipping.sql
+mysql -u root -pRoboShop@1 <shipping.sql                &>> $LOGFILE
 stat $?
 
 echo -e "************ \e[36m Installation of ${COMPONENT} has Completed \e[0m ***************"
