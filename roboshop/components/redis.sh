@@ -1,6 +1,6 @@
 #!/bin/bash
 
-COMPONENT=redis
+COMPONENT="redis"
 
 source components/common.sh
 
