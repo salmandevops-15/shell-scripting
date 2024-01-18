@@ -48,7 +48,7 @@ stat $?
 
 echo -n "Modifying the ownership :"
     mv -f ${COMPONENT}-main/ ${COMPONENT}/      &>> $LOGFILE
-    chown -R $APPUSER:$APPUSER /home/$APPUSER/${COMPONENT}/
+    chown -R $APPUSER:$APPUSER /home/$APPUSER/${COMPONENT}/             &>> $LOGFILE
 stat $?
 
 }
@@ -56,7 +56,7 @@ stat $?
 NPM_INSTALL () {
 
     echo -n "Installing the dependencies :"
-    cd /home/$APPUSER/${COMPONENT}
+    cd /home/$APPUSER/${COMPONENT}                      &>> $LOGFILE
     npm install                         &>> $LOGFILE
 stat $?
 
