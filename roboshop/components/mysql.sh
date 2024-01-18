@@ -32,9 +32,9 @@ echo "ALTER USER 'root'@'localhost' IDENTIFIED BY 'RoboShop@1';" | mysql --conne
 stat $?
 fi
 
-echo "show plugins;" | mysql -uroot -pRoboShop@1      &>> $LOGFILE
+echo "show plugins;" | mysql -uroot -pRoboShop@1 |grep validate_password  &>> $LOGFILE
 if [ $? -eq 0 ]; then
-echo -n "Uninstalling Validate_password plugin :"
+echo -n "Uninstalling validate_password plugin :"
 echo "UNINSTALL PLUGIN validate_password;" | mysql -uroot -pRoboShop@1   &>> $LOGFILE
 stat $?
 fi
