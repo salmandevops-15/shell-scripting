@@ -27,8 +27,8 @@ stat $?
 fi
 
 echo -n "Configuring the ${COMPONENT} ${APPUSER} privilages :"
-rabbitmqctl set_user_tags roboshop administrator
-rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"
+rabbitmqctl set_user_tags roboshop administrator                    &>> $LOGFILE
+rabbitmqctl set_permissions -p / roboshop ".*" ".*" ".*"            &>> $LOGFILE
 stat $?
 
 echo -e "************ \e[36m Installation of ${COMPONENT} has Completed \e[0m ***************"
