@@ -19,9 +19,13 @@ systemctl enable mysqld                     &>> $LOGFILE
 systemctl start mysqld                      &>> $LOGFILE
 stat $?
 
-echo -n "fetching the root user default password :"
-DEFAULT_ROOT_PASSWORD= $(grep 'temporary password' /var/log/mysqld.log | awk '{print $NF}')      &>> $LOGFILE
-stat $?
+echo -n "Fetching default root password : "
+DEFAULT_ROOT_PASSWORD=$(grep 'temporary password' /var/log/mysqld.log | awk  '{print $NF}')
+stat $? 
+
+# echo -n "fetching the root user default password :"
+# DEFAULT_ROOT_PASSWORD= $(grep 'temporary password' /var/log/mysqld.log | awk  '{print $NF}' )      &>> $LOGFILE
+# stat $?
 
 # echo "show databases;" | mysql -uroot -pRoboShop@1
 # if [ $? -ne 0 ]; then
