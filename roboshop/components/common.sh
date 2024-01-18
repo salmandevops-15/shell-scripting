@@ -80,9 +80,10 @@ echo -e "************ \e[36m Installation of ${COMPONENT} has Completed \e[0m **
 }
 
 MVN_PACKAGE () {
+    
     cd ${COMPONENT} 
-    mvn clean package 
-    mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
+    mvn clean package                                   &>> $LOGFILE
+    mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar         &>> $LOGFILE
 }
 
 JAVA(){
