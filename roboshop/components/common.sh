@@ -87,8 +87,8 @@ MVN_PACKAGE () {
 
 JAVA(){
 
-    echo -n "Installing maven :"
-    yum install maven -y
+    echo -n "Installing maven :"            
+    yum install maven -y                &>> $LOGFILE
 
     CREATING_USER
 
