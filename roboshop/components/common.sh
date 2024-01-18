@@ -64,7 +64,8 @@ stat $?
 
 CONFIGURE_SVC () {
     echo -n "Updating Dns_name in systemd file :"
-sed -i -e "s/MONGO_ENDPOINT/mongodb.roboshop.internal/"  -e "s/REDIS_ENDPOINT/redis.roboshop.internal/" -e "s/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/"  /home/${APPUSER}/${COMPONENT}/systemd.service
+sed -i -e "s/DBHOST/mysql.roboshop.internal/" -e "s/CARTENDPOINT/cart.roboshop.internal/" -e "s/MONGO_ENDPOINT/mongodb.roboshop.internal/"  -e "s/REDIS_ENDPOINT/redis.roboshop.internal/" -e "s/CATALOGUE_ENDPOINT/catalogue.roboshop.internal/"  /home/${APPUSER}/${COMPONENT}/systemd.service
+
 mv /home/${APPUSER}/${COMPONENT}/systemd.service  /etc/systemd/system/${COMPONENT}.service
 stat $?
 
@@ -75,6 +76,30 @@ systemctl restart ${COMPONENT}       &>> $LOGFILE
 stat $?
 
 echo -e "************ \e[36m Installation of ${COMPONENT} has Completed \e[0m ***************"
+
+}
+
+MVN_PACKAGE () {
+    cd ${COMPONENT} 
+    mvn clean package 
+    mv target/${COMPONENT}-1.0.jar ${COMPONENT}.jar
+}
+
+JAVA(){
+
+    echo -n "Installing maven :"
+    yum install maven -y
+
+    CREATING_USER
+
+    DOWNLOAD_AND_EXTRACT
+
+    MVN_PACKAGE
+
+    CONFIGURE_SVC
+
+
+
 
 }
 
