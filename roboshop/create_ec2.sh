@@ -5,8 +5,8 @@ COMPONENT=$1
 
 if [ -z $1 ] ; then
 
-    echo -e "\e[31m please give input \e[0m"
-    echo -e "\e[36m the possible input is: \n\t\t sudo bash create_ec2.sh component_name \e[0m"
+    echo -e "\e[31m Component Name is Needed \e[0m"
+    echo -e "\e[36m the possible input is: \n\t\t sudo bash create_ec2.sh ComponentName \e[0m"
 fi
 
 
