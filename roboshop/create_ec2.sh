@@ -2,7 +2,7 @@
 
 AMI_ID=$(aws ec2 describe-images --region us-east-1 --image-ids ami-0f75a13ad2e340a58 | jq '.Images[].ImageId' | sed 's/"//g')
 
-echo -e "\e[35m The value of AMI-ID is $AMI_ID  \e[0m"
+echo -e "\e[36m The value of AMI-ID is $AMI_ID  \e[0m"
 
 # aws ec2 describe-images --region us-east-1 --image-ids ami-0f75a13ad2e340a58
 
