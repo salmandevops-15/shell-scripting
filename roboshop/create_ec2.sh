@@ -10,7 +10,7 @@ if [ -z "$1" ] || [ -z "$2" ] ; then
     echo -e "\e[31m Component Name is Needed \e[0m"
     echo -e "\e[36m the possible input is: \n\t\t sudo bash create_ec2.sh ComponentName  EvnName \e[0m"
     exit 1
-    
+
 fi
 
 
@@ -60,17 +60,3 @@ else
 
 fi
 
-
-# aws ec2 run-instances --image-id $AMI_ID --count 1 --instance-type t2.micro  --security-group-ids $SG_ID | jq .   
-
-
-# aws ec2 describe-security-groups --group-ids sg-04b697d4f9bf8c941 | jq '.SecurityGroups[].GroupId' | sed 's/"//g'
-
-# aws ec2 describe-security-groups --group-ids sg-04b697d4f9bf8c941
-
-
-
-
-# aws ec2 describe-images --region us-east-1 --image-ids ami-0f75a13ad2e340a58            ## command to fetch ami details
-
-# aws ec2 run-instances --image-id ami-xxxxxxxx --count 1 --instance-type t2.micro  --security-group-ids sg-903004f8         ## command to create ec2 instance
