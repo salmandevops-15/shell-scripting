@@ -8,7 +8,7 @@ HOSTEDZONE_ID=Z079795913TEES271E21K
 if [ -z "$1" ] || [ -z "$2" ] ; then
 
     echo -e "\e[31m Component Name is Needed \e[0m"
-    echo -e "\e[36m the possible input is: \n\t\t sudo bash create_ec2.sh ComponentName \e[0m"
+    echo -e "\e[36m the possible input is: \n\t\t sudo bash create_ec2.sh ComponentName  EvnName \e[0m"
     exit 1
 fi
 
