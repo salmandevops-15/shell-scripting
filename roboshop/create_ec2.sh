@@ -9,7 +9,7 @@ echo -e "\e[36m The value of SG-ID is $SG_ID  \e[0m"
 
 
 echo -e "*********** \e[32m LAUNCHING Ec2 instance \e[0m ****************"
-aws ec2 run-instances --image-id $AMI_ID --count 1 --instance-type t2.micro  --security-group-ids $SG_ID     
+aws ec2 run-instances --image-id $AMI_ID --count 1 --instance-type t2.micro  --security-group-ids $SG_ID | jq .    
 
 
 
