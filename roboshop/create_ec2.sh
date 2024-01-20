@@ -5,11 +5,10 @@ ENV=$2
 HOSTEDZONE_ID=Z079795913TEES271E21K
 
 
-if [ -z $1 ] ; then
+if [ -z "$1" ] || [ -z "$2" ] ; then
 
     echo -e "\e[31m Component Name is Needed \e[0m"
     echo -e "\e[36m the possible input is: \n\t\t sudo bash create_ec2.sh ComponentName \e[0m"
-   
     exit 1
 fi
 
@@ -27,6 +26,7 @@ CREATE_EC2 () {
 
         echo -e "\e[36m The value of AMI-ID is $AMI_ID  \e[0m"
         echo -e "\e[36m The value of SG-ID is $SG_ID  \e[0m"
+        echo -e "Private Ip address of $COMPONENT-$ENV server is \e[36m $IPADDRESS \e[0m"
 
 
 
@@ -34,8 +34,6 @@ CREATE_EC2 () {
         aws ec2 run-instances --image-id $AMI_ID --instance-type t2.micro  --count 1 --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$COMPONENT}]" | jq .
         echo -e "*********** \e[32m LAUNCHING Ec2 instance is Completed \e[0m ****************" 
         
-
-        echo -e "Private Ip address of $COMPONENT-$ENV server is \e[36m $IPADDRESS \e[0m"
 
 
         echo -e "\e[36m ***** Creating DNS record for the $COMPONENT-$ENV  ****** \e[0m"
