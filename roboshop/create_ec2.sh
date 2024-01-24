@@ -31,9 +31,9 @@ CREATE_EC2 () {
 
 
 
-        echo -e "*********** \e[32m LAUNCHING Ec2 instance \e[0m ****************"
+        echo -e "*********** \e[32m LAUNCHING Ec2 $COMPONENT-$ENV instance \e[0m ****************"
         aws ec2 run-instances --image-id $AMI_ID --instance-type t2.micro  --count 1 --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$COMPONENT-$ENV}]" | jq .
-        echo -e "*********** \e[32m LAUNCHING Ec2 instance is Completed \e[0m ****************" 
+        echo -e "*********** \e[32m LAUNCHING Ec2 $COMPONENT-$ENV instance is Completed \e[0m ****************" 
         
 
 
