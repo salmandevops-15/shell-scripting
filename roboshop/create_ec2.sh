@@ -32,7 +32,7 @@ CREATE_EC2 () {
 
 
         echo -e "*********** \e[32m LAUNCHING Ec2 instance \e[0m ****************"
-        aws ec2 run-instances --image-id $AMI_ID --instance-type t2.micro  --count 1 --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$COMPONENT}]" | jq .
+        aws ec2 run-instances --image-id $AMI_ID --instance-type t2.micro  --count 1 --security-group-ids $SG_ID --tag-specifications "ResourceType=instance,Tags=[{Key=Name,Value=$COMPONENT-$ENV}]" | jq .
         echo -e "*********** \e[32m LAUNCHING Ec2 instance is Completed \e[0m ****************" 
         
 
@@ -40,7 +40,7 @@ CREATE_EC2 () {
         echo -e "\e[36m ***** Creating DNS record for the $COMPONENT-$ENV  ****** \e[0m"
         sed -e "s/COMPONENT/${COMPONENT}-${ENV}/"  -e "s/IPADDRESS/${IPADDRESS}/" route53.json > /tmp/record.json
         aws route53 change-resource-record-sets --hosted-zone-id $HOSTEDZONEID --change-batch file:///tmp/record.json
-        echo -e "\e[36m **** Creating DNS Record for the $COMPONENT has completed **** \e[0m"
+        echo -e "\e[36m **** Creating DNS Record for the $COMPONENT-$ENV has completed **** \e[0m"
 
 }
 
