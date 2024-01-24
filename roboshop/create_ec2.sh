@@ -47,7 +47,7 @@ CREATE_EC2 () {
 
 if [ "$1" = "all" ] ; then
 
-    for component in frontend mongodb catalogue redis user cart mysql shipping  rabbitmq payment ; do
+    for component in frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment ; do
 
             COMPONENT=$component
             
