@@ -51,7 +51,9 @@ if [ "$1" = "all" ] ; then
             COMPONENT=$component
             CREATE_EC2
     done
+
 else 
-    CREATE_EC2
+        CREATE_EC2
+
 fi
 
