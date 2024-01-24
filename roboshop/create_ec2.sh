@@ -45,29 +45,29 @@ CREATE_EC2 () {
 }
 
 
-if [ "$1" = "all" ] ; then
+# if [ "$1" = "all" ] ; then
 
-    for component in frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment ; do
-            COMPONENT=$component
-            CREATE_EC2
-    done
-
-else 
-
-        CREATE_EC2
-
-fi
-
-# if [ "$1" = "all" ]; then    
-
-#     for component in frontend mongodb catalogue redis user cart shipping mysql rabbitmq payment ; do 
-#         COMPONENT=$component
-#         create_ec2
-#     done 
+#     for component in frontend mongodb catalogue redis user cart mysql shipping rabbitmq payment ; do
+#             COMPONENT=$component
+#             CREATE_EC2
+#     done
 
 # else 
 
-#     create_ec2
+#         CREATE_EC2
 
-# fi 
+# fi
+
+if [ "$1" = "all" ]; then    
+
+    for component in frontend mongodb catalogue redis user cart shipping mysql rabbitmq payment ; do 
+        COMPONENT=$component
+        CREATE_EC2
+    done 
+
+else 
+
+    CREATE_EC2
+
+fi 
         
